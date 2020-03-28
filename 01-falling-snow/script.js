@@ -30,11 +30,13 @@
   function moveSnowBall(canvas, snowBall) {
     snowBall.x += snowBall.speedX;
     snowBall.y += snowBall.speedY;
+
     if (snowBall.x > canvas.width) {
       snowBall.x = 0;
-    } else if (snowBall < 0) {
+    } else if (snowBall.x < 0) {
       snowBall.x = canvas.width;
     }
+
     if (snowBall.y > canvas.height) {
       snowBall.y = 0;
     }
@@ -56,8 +58,8 @@
       });
       snowBalls.forEach(snowBall => {
         moveSnowBall(canvas, snowBall);
-      }, 50);
-    });
+      });
+    }, 50);
   }
   run();
 })();
